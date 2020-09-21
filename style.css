@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif !important;
+    color: #fff !important;
+
+}
+nav{
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background: rgba(34,34,34);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0);
+    position: sticky;
+    z-index: 5;
+    top: 0px;
+    
+}
+
+.active{
+    color: #fff;
+}
+h4{
+    margin-bottom: 0px !important;
+}
+.logo{
+    color: rgb(226,226,226);
+    letter-spacing: 5px;
+    font-size: 20px;
+    
+}
+.navLink{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+.navLink li{
+    list-style: none;
+}
+.navLink a{
+    color: rgb(226,226,226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 14px;
+}
+ul{
+    margin-bottom: 0 !important;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226,226,226);
+    margin: 5px;
+    transition: all 0.3s ease;
+
+}
+/* .inicio{
+    width: 100%;
+    height: 300px;
+
+} */
+
+/* background: #C9D6FF;
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  
+background: linear-gradient(to right, #E2E2E2, #C9D6FF);  */
+
+
+section {
+    background: linear-gradient( to right top, #525252, #131313);
+    min-height: 92vh;
+
+}
+.container{
+    background: url(./img/code-1839406_1920.jpg);
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+span {
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    transition: 1.5s ease;
+}
+h1{
+    letter-spacing: .5vw;
+    font-family: 'Titillium Web';
+    line-height: 2.8vw;
+    font-size: 3vw;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.letters{
+    top: 30%;
+    left: 5%;
+    position: absolute !important;
+}
+
+.plane{
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    /* left: -5%; */
+
+  
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and ( max-width: 1024px) {
+    .navLink{
+        width: 60%;
+    }
+}
+
+@media screen and ( max-width: 768px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    nav{
+        position: relative;
+        display: block !important;
+    }
+    .navLink{
+        position: fixed;
+        background: rgba(34,34,34);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        clip-path: circle(100px at 90% -10%);
+        -webkit-clip-path: circle(100px at 90% -15%);
+        transition: all 1s ease-out;
+        z-index: 1;
+
+
+    }
+    .navLink.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -15%);
+        pointer-events: all;
+
+    }
+   
+    .navLink li{
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+    }
+
+
+    h1{
+        letter-spacing: 1.5vw;
+        font-family: 'Titillium Web';
+        line-height: 7.8vw !important;
+        font-size: 9vw !important;
+        margin-bottom: 0px !important;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+}
+
+.nav-active{
+    transform: translateX(0px);
+}
+
+
+
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes navLinkFadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    to{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+} 
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
