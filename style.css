@@ -14,11 +14,16 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background: rgba(34,34,34);
+    background: #fff;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0);
     position: sticky;
     z-index: 5;
     top: 0px;
+    -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
+        -ms-transition: all 1s ease-out;
+        transition: all 1s ease-out;
     
 }
 
@@ -75,8 +80,15 @@ background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
 background: linear-gradient(to right, #E2E2E2, #C9D6FF);  */
 
 
-section {
-    background: linear-gradient( to right top, #525252, #131313);
+.inicio {
+    background: url(./img/hello-world.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    width: 100%;
+    background-color:linear-gradient( to right top, #525252, #131313);
     min-height: 92vh;
 
 }
@@ -101,19 +113,96 @@ h1{
 }
 
 .letters{
-    top: 30%;
+    top: 20%;
     left: 5%;
     position: absolute !important;
+    
 }
 
 .plane{
     width: 100px;
     position: absolute;
-    top: 50%;
-    /* left: -5%; */
+    top: 70%;
+    left: -10%; 
+    transform: rotate(60deg);
+
 
   
 }
+
+
+.intro {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider {
+  background: rgb(97, 105, 109);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+}
+
+.intro-text {
+  color: rgb(233, 233, 233);
+  font-family: "Heebo", sans-serif;
+  font-size: 3rem;
+}
+
+
+.hide {
+  background: black;
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+
+.plan {
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-name:  slide;
+}
+/* ======================== SECCION DOS ==================*/
+
+.about{
+    background: rgb(136, 174, 189);
+    color: #fff;
+}
+
+/* ========== SECCION TRES =============== */
+
+.proyects{
+
+    background: black;
+    color: #fff;
+}
+
+/* ========= SECCION CUATRO ============== */
+
+.contacto{
+
+    background: blue;
+    color: #fff;
+
+}
+
+@keyframes slide {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
 
 
 /* MEDIA QUERIES */
@@ -221,3 +310,18 @@ h1{
 .toggle .line3{
     transform: rotate(45deg) translate(-5px, -6px);
 }
+
+.contact {
+    animation-duration: 5s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+        color: rgba(34,34,34);
+    }
+  
+    to {
+       color:#FFFFE0;
+    }
+  }

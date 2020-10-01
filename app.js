@@ -38,20 +38,35 @@
     setInterval('hola()', 1000);
     setInterval('holaa()', 1000);
 
-    gsap.registerPlugin(MotionPathPlugin);
 
     // path: [ {x:400, y:80}, {x:500, y:-200}, {x:300, y:-250}, {x:400, y:-100}, {x:800, y:0},      ],
+    
+    //path: [ {x:500, y:100}, {x:750, y:-100}, {x:350, y:-50}, {x:600, y:130}, {x:1300, y:-380}], 
 
-    const tween = gsap.timeline();
-    tween.to(".plane", {
-      duration: 7,
-      ease: "power1.inOut",
-      motionPath: {
-        path: [ {x:500, y:100}, {x:750, y:-100}, {x:350, y:-50}, {x:600, y:130}, {x:1200, y:-400}  ], 
-        curviness: 1.2,
-        autoRotate: true
-      }
-    });
+    setTimeout(() => {
+        document.getElementById('navBar').style.background ="rgba(34,34,34)";
+    }, 2500);
+
+
+    var lastScrollTop = 0;
+    function Scroll(){
+        var Ypos = window.pageYOffset;
+        if(Ypos  > lastScrollTop)
+        {
+
+        }
+
+    }
+
+    
+const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+
+tl.to(".text", { y: "0%", duration: 1, stagger: 0.25 });
+tl.to(".slider", { y: "-100%", duration: 1.5, delay: 2 });
+tl.to(".intro", { y: "-100%", duration: 1 }, "-=1");
+tl.fromTo("nav", { opacity: 0 }, { opacity: 1, duration: 1 });
+tl.fromTo(".big-text", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
+   //     console.log(plane)
     
     // const controller = new ScrollMagic.Controller();
     // const scene = new ScrollMagic.Scene({
